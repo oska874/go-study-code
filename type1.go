@@ -53,4 +53,7 @@ func main() {
 	for k, str1 := range strs {
 		fmt.Printf("%d %s len %d\n", k, str1, len(str1))
 	}
+
+	var sl1 = make([]int, 10)
+	fmt.Print(sl1[0], sl1[9])
 }
