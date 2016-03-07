@@ -63,4 +63,12 @@ func main() {
 	case 1:
 		print("BBB ", i, "\n")
 	}
+
+    for i = 0; i < 5; i++ {
+        defer fmt.Printf("%d ", i)
+        if i == 3{
+            break
+        }
+        fmt.Printf("a\n")
+    }
 }
