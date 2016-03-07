@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+import packtt "package1"
+
 func ReadFull(buf []byte) (n int, err int) {
 	n = 9
 	err = 3
@@ -55,7 +57,7 @@ func f_panic() {
 	panic(42)
 }
 
-func throwsPanic(f func()) (b bool) {
+func ThrowsPanic(f func()) (b bool) {
 	defer func() {
 		if x := recover(); x != nil {
 			b = true
@@ -86,5 +88,8 @@ func main() {
 	mapfunc()
 	call_back(1, ff)
 
-	fmt.Printf("%d\n", throwsPanic(f_panic))
+	fmt.Printf("%d\n", ThrowsPanic(f_panic))
+
+	//fmt.Printf("%d\n", package1.Out1())
+	fmt.Printf("2 %d\n", packtt.Out1())
 }
